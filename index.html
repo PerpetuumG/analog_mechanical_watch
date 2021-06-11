@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Loader</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="cogs">
+            <div class="cog1"></div>
+            <div class="cog2"></div>
+        </div>
+
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+    </div>
+
+    <script>
+        let h = document.querySelector('.hour'),
+            m = document.querySelector('.min'),
+            s = document.querySelector('.sec');
+
+        setInterval(clock, 1000);
+
+        function clock() {
+            let d = new Date();
+            let hh = d.getHours() * 30 + (d.getMinutes() / 2);
+            let mm = d.getMinutes() * 6;
+            let ss = d.getSeconds() * 6;
+            console.log(hh, mm, ss);
+
+            h.style.transform = `rotate(${hh}deg)`;
+            m.style.transform = `rotate(${mm}deg)`;
+            s.style.transform = `rotate(${ss}deg)`;
+        }
+
+    </script>
+</body>
+
+</html>
